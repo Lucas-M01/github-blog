@@ -8,6 +8,7 @@ export const BlogContainer = styled.div`
     
     input {
         margin-top: 0.75rem;
+        margin-bottom: 3rem;
         border-radius: 6px;
         border: 1px solid ${({theme}) => theme["base-border"]};
         background: ${({theme})=> theme["base-input"]};

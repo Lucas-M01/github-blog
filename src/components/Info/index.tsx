@@ -1,8 +1,8 @@
 import { InfoContainer, InfoBottom, InfoTop } from "./styles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpRightFromSquare, faUserGroup } from '@fortawesome/free-solid-svg-icons'
-import {  } from '@fortawesome/fontawesome-svg-core'
-import logoGithub from '../../assets/logoGithub.svg'
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { TitleText } from '../Typography'
+import { LinkSite } from "../Link";
 
 export function Info() {
     return(
@@ -10,8 +10,8 @@ export function Info() {
             <img src="https://avatars.githubusercontent.com/u/82176047?v=4" />
             <div>
                 <InfoTop>
-                    <span className="title">Lucas Montenegro</span>
-                    <span className="rede">GITHUB <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </span>
+                    <TitleText>Lucas Montenegro</TitleText>
+                    <LinkSite href="https://github.com/Lucas-M01">GITHUB</LinkSite>
                 </InfoTop>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae corporis delectus earum ipsa numquam praesentium, nesciunt autem aspernatur aperiam ipsum nemo porro hic labore voluptatem impedit architecto deleniti repudiandae modi.</p>
                 <InfoBottom>

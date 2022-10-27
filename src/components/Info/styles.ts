@@ -19,21 +19,7 @@ export const InfoContainer = styled.section`
 export const InfoTop = styled.div`
     display: flex;
     justify-content: space-between;
-    color: ${({theme}) => theme.blue};
     margin-bottom: 0.5rem;
-    
-
-    .title {
-        color: ${({theme}) => theme["base-title"]};
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    .rede {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-    }
 `
 
 export const InfoBottom = styled.div`
