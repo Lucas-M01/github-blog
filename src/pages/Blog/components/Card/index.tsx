@@ -1,6 +1,7 @@
 import { RegularText, TitleText } from "../../../../components/Typography";
 import { CardContainer, CardTop } from "./styles";
 import { Link } from 'react-router-dom';
+
  
 export function Card(){
     return (

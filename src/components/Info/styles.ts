@@ -12,9 +12,16 @@ export const InfoContainer = styled.section`
         border-radius: 8px;
         margin-right: 2rem;
         width: 148px;
-        height: 148px;
+        height: 100%;
     }
 ` 
+
+export const Perfil = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+    height: 9.25rem;
+`
 
 export const InfoTop = styled.div`
     display: flex;
@@ -24,21 +31,21 @@ export const InfoTop = styled.div`
     margin-bottom: 0.5rem;
 `
 
-interface InfoBottomProps {
-    marginTop?: string
-}
-
-export const InfoBottom = styled.div<InfoBottomProps>`
+export const InfoBottom = styled.div`
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-top: ${({ marginTop }) => marginTop ?? 1.5}rem;
-    color: ${({theme}) => theme["base-subtitle"]};
+    gap: 1.5rem; 
+    flex-wrap: wrap;
+    margin-top: auto;
 
-    span {
+    span, a {
         display: flex;
+        
         align-items: center;
+        align-content: flex-end;
         gap: 8px;
+        text-decoration: none;
+        color: ${({theme}) => theme["base-subtitle"]};
 
         i {
             color: ${({theme}) => theme["base-label"]};
