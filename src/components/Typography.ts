@@ -18,7 +18,7 @@ export const TitleText = styled.span<TitleTextProps>`
   color: ${({ theme, color }) => theme[`base-${color ?? "title"}`]};
   font-size: ${({ theme, size }) => theme.textSizes[`title-${size ?? 'm'}`]};
   line-height: 160%;
-  font-weight: ${({ weight }) => weight ?? 800};
+  font-weight: ${({ weight }) => weight ?? 700};
   
   width: ${({width}) => width};
 `;

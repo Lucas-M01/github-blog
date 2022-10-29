@@ -1,18 +1,30 @@
 import { ReactNode } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUpRightFromSquare, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { LinkContainer } from "./styles";
+import { Link } from 'react-router-dom'
 
-interface LinkProps {
+interface LinksProps {
+    blank?: boolean;
     children: ReactNode;
     href: string;
 }
 
-export function LinkSite({children, href}: LinkProps){
+export function LinkSite({ blank, children, href }: LinksProps){
+    const redirect = blank as boolean;
     return(
-        <LinkContainer href={href}>
-            {children}
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+        <LinkContainer>
+            {redirect == true ? (
+                <Link to={href}>
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                    {children}
+                </Link>
+                ) : (
+                <a href={href} >
+                    {children}
+                    {<FontAwesomeIcon icon={faArrowUpRightFromSquare} />}
+                </a>
+            )}
         </LinkContainer>
     )
 }

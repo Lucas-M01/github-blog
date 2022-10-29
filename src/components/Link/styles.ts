@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
-export const LinkContainer = styled.a`
+export const LinkContainer = styled.span`
     display: flex;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: ${({theme}) => theme.blue};
-    
+    height: 2rem;
+    max-height: 10rem;
 
-    &:hover {
-        transition: 0.1s;
-        border-bottom: 2px solid ${({theme}) => theme.blue}; 
+    a {
+        align-items: center;
+        display: flex;
+        gap: 8px;
+        color: ${({theme}) => theme.blue};
+        text-decoration: none;
+
+
+        &:hover {
+            transition: 0.1s;
+            border-bottom: 2px solid ${({theme}) => theme.blue}; 
+        }
     }
 `

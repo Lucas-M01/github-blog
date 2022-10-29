@@ -1,25 +1,25 @@
-import { Header } from '../../components/Header'
 import { Info } from '../../components/Info'
-import { RegularText } from '../../components/Typography'
-import { Posts } from './components/Posts'
-import { BlogContainer, BlogMain } from './styles'
+import { Card } from './components/Card'
+import { SearchInput } from './components/SearchInput'
+import { BlogContainer, BlogMain, PostsSummary } from './styles'
 
 export function Blog() {
     return (
         <div>
-            <Header />
             <BlogContainer>
                 <Info />
-                <BlogMain>
-                    <RegularText size="m" color='subtitle' >Publicações</RegularText>
-                    <span>2 publicações</span>
-                </BlogMain>
-                    <input 
-                        type="text"
-                        placeholder="Buscar conteúdo "
-                    />
 
-                    <Posts />
+                <BlogMain>
+                    <SearchInput />
+                </BlogMain>
+
+                <PostsSummary>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                </PostsSummary>
+                
             </BlogContainer>
         </div>
     )

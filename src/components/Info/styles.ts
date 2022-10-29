@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const InfoContainer = styled.section`
     background: ${({theme}) => theme["base-profile"]};
@@ -18,15 +18,21 @@ export const InfoContainer = styled.section`
 
 export const InfoTop = styled.div`
     display: flex;
+    width: 100%;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5rem;
 `
 
-export const InfoBottom = styled.div`
+interface InfoBottomProps {
+    marginTop?: string
+}
+
+export const InfoBottom = styled.div<InfoBottomProps>`
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-top: 1.5rem;
+    margin-top: ${({ marginTop }) => marginTop ?? 1.5}rem;
     color: ${({theme}) => theme["base-subtitle"]};
 
     span {
@@ -38,4 +44,10 @@ export const InfoBottom = styled.div`
             color: ${({theme}) => theme["base-label"]};
         }
     }
+
+
+`
+
+export const PostStyleContainer = styled(InfoContainer)`
+    flex-direction: column;
 `

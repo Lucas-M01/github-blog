@@ -1,6 +1,6 @@
-import { InfoContainer, InfoBottom, InfoTop } from "./styles";
+import { InfoContainer, InfoBottom, InfoTop, PostStyleContainer } from "./styles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { faUserGroup, faCalendarDay, faComment } from '@fortawesome/free-solid-svg-icons'
 import { TitleText } from '../Typography'
 import { LinkSite } from "../Link";
 
@@ -20,5 +20,22 @@ export function Info() {
                 </InfoBottom>
             </div>
         </InfoContainer>
+    )
+}
+
+export function PostInfo() {
+    return(
+        <PostStyleContainer>
+            <InfoTop>
+                <LinkSite blank={true} href="/">VOLTAR</LinkSite>
+                <LinkSite blank={false} href="/">VER NO GITHUB</LinkSite>
+            </InfoTop>
+            <TitleText>JavaScript data types and data structures</TitleText>
+            <InfoBottom marginTop="0.5">
+                <span><i className="fa-brands fa-github" />Lucas-M01</span>
+                <span><FontAwesomeIcon icon={faCalendarDay} color="#3A536B" />Há 1 dia</span>
+                <span><FontAwesomeIcon icon={faComment} color="#3A536B" />5 comentários</span>
+            </InfoBottom>
+        </PostStyleContainer>
     )
 }
