@@ -47,10 +47,10 @@ export function Info() {
             <img src={avatar_url} />
             <Perfil>
                 <InfoTop>
-                    <TitleText>{name}</TitleText>
+                    <TitleText className="title">{name}</TitleText>
                     <LinkSite href={html_url}>GITHUB</LinkSite>
                 </InfoTop>
-                <p>{bio?.length < 250 ? bio : bio?.substring(0, 250).concat("...")}</p>
+                <p>{bio?.length < 250 ? bio : bio?.substring(0, 250).concat("...")} </p>
                 <InfoBottom>
                     <a href={html_url}><i className="fa-brands fa-github" />{login}</a>
                     {company ? <span><FontAwesomeIcon icon={faBuilding} color="#3A536B" />{company}</span>: <></>}
@@ -100,7 +100,7 @@ export function PostInfo({ postData }: PostInfoProps) {
                 <LinkSite blank={true} href="/">VOLTAR</LinkSite>
                 <LinkSite blank={false} href="/">VER NO GITHUB</LinkSite>
             </InfoTop>
-            <TitleText>{postData.title}</TitleText>
+            <TitleText className="title">{postData.title}</TitleText>
             <InfoBottom>
                 <span><i className="fa-brands fa-github" />{user.login}</span>
                 <span><FontAwesomeIcon icon={faCalendarDay} color="#3A536B" />{formattedD(postData.created_at)}</span>

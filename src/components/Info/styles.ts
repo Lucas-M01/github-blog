@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const InfoContainer = styled.section`
     background: ${({theme}) => theme["base-profile"]};
@@ -11,8 +11,18 @@ export const InfoContainer = styled.section`
     img {
         border-radius: 8px;
         margin-right: 2rem;
-        width: 148px;
+        width: 9.25rem;
         height: 100%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding: 1rem 1.3rem;
+        
+        img {
+            margin-right: 1rem;
+            height: 50%;
+            width: 30%;
+        }
     }
 ` 
 
@@ -21,6 +31,19 @@ export const Perfil = styled.div`
     flex-direction: column;
     width: 45rem;
     height: 9.25rem;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 0.75rem;
+        height: 100%;
+        
+        .title {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.75rem;
+        }
+    }
 `
 
 export const InfoTop = styled.div`
@@ -29,6 +52,15 @@ export const InfoTop = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 0.05rem;
+
+        
+        font-size: 0.75rem;
+
+
+    }
 `
 
 export const InfoBottom = styled.div`
@@ -52,9 +84,21 @@ export const InfoBottom = styled.div`
         }
     }
 
+    @media only screen and (max-width: 768px) {
+        font-size: 0.65rem;
+        gap: 1.25rem;
+    }
 
 `
 
 export const PostStyleContainer = styled(InfoContainer)`
     flex-direction: column;
+
+    @media only screen and (max-width: 768px) {
+        .title {
+            font-size: 1rem;
+            line-height: 130%;
+            margin-bottom: 0.5rem;
+        }
+    }    
 `

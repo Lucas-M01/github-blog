@@ -13,6 +13,10 @@ export const CardContainer = styled.div`
     div {
         color: ${({theme}) => theme["base-text"]}
     }
+
+    @media only screen and (max-width: 768px) {
+        padding: 1.5rem;
+    }
 `
 
 export const CardTop = styled.div`

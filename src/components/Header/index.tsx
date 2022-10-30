@@ -6,7 +6,7 @@ import headerBg from '../../assets/headerBg.png'
 export function Header() {
     return(
         <HeaderContainer>
-            <img src={headerBg} width={1600} />
+            <img src={headerBg} width={1600} className="background" />
             <img src={logoImg} className="logo" />
         </HeaderContainer>
     )
