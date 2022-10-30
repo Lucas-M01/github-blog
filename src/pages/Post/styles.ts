@@ -6,8 +6,3 @@ export const PostContainer = styled.div`
     margin-left: 18rem;
     margin-right: 18rem;
 `
-
-export const PostContent = styled.div`
-    margin: 2.5rem 2rem;
-
-`

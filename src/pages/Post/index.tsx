@@ -1,21 +1,40 @@
 import { PostInfo } from "../../components/Info";
-import { RegularText } from "../../components/Typography";
-import { PostContainer, PostContent } from "./styles";
+import { PostContainer } from "./styles";
+
+import { useCallback, useEffect, useState } from "react";
+import { useParams } from 'react-router-dom'
+import { IPost } from "../Blog";
+import { api } from "../../lib/axios";
+import { PostContent } from "./components/PostContent";
+
+const username = import.meta.env.VITE_GITHUB_USERNAME;
+const repoName = import.meta.env.VITE_GITHUB_REPONAME;
 
 export function Post(){
+    const [postData, setPostData] = useState<IPost>({} as IPost);
+
+    const { id } = useParams();
+
+    const getPostDetails = useCallback(async () => {
+        try {
+          const response = await api.get(
+            `/repos/${username}/${repoName}/issues/${id}`
+          );
+    
+          setPostData(response.data);
+        } catch(err) {
+          console.log(err);
+        }
+      }, [postData]);
+    
+      useEffect(() => {
+        getPostDetails();
+      }, []);
+
     return (
         <PostContainer>
-            <PostInfo/>
-            <PostContent>
-                Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
-
-                Dynamic typing
-                JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:
-
-                let foo = 42; // foo is now a number
-                foo = 'bar'; // foo is now a string
-                foo = true; // foo is now a boolean
-            </PostContent>
+            <PostInfo postData={postData} />
+            <PostContent content={postData.body} />
         </PostContainer>
     )
 }

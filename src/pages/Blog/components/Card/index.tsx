@@ -1,19 +1,33 @@
 import { RegularText, TitleText } from "../../../../components/Typography";
 import { CardContainer, CardTop } from "./styles";
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'
+import { IPost } from "../..";
+import { relativeDateFormatter } from "../../../../utils/formatter";
+import { format } from 'date-fns'
 
+export interface PostProps {
+    post: IPost;
+}
  
-export function Card(){
+export function Card({ post }: PostProps){
+    const date = format(new Date(post.created_at), 'MM/dd/yyyy');
+
+    const formattedDate = relativeDateFormatter(date)
+
+
     return (
-        <Link to="/post">
+        <Link to={`/post/${post.number}`}>
             <CardContainer>
                 <CardTop>
-                    <TitleText size="s" width="17rem">JavaScript data types and data structures</TitleText>
-                    <RegularText size="s" color="span" width="4rem" >Há 1 dia</RegularText>
+                    <TitleText size="s" width="17rem">{post.title}</TitleText>
+                    <RegularText size="s" color="span" width="4rem" >{formattedDate}</RegularText>
                 </CardTop>
-                    <RegularText>
-                        Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
-                    </RegularText>
+                    <div>
+                        <ReactMarkdown>
+                            {post.body && post.body.length > 500 ? post.body.substring(0, 140).concat("...") : post.body}
+                        </ReactMarkdown>
+                    </div>
             </CardContainer>
         </Link>
     )
