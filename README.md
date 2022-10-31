@@ -40,7 +40,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## ↔ Responsivo 
 
-No template não tem o template se caso fosse acessado por um dispositivo movel, porém nesta aplicação este conceito foi colocado em prática
+No template não tem a responsividade se caso fosse acessado por um dispositivo móvel, porém nesta aplicação este conceito foi colocado em prática
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -72,7 +72,7 @@ VITE_GITHUB_USERNAME=Lucas-M01
 # Colocar o repositório no qual estão as issues
 VITE_GITHUB_REPONAME=github-blog
 
-// Caso queira criar outra variável de ambiente, lembre de começar com VITE_
+# Caso queira criar outra variável de ambiente, lembre de começar com VITE_
 ```
 
 Os textos que estão nas issues foram pegos do site [Rocketseat Blog](https://blog.rocketseat.com.br/)
